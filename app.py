@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/upi_pay", methods=["GET"])
 def redirect_to_upi_payment():
-    flink = ""
+    flink = "upi://pay?pa={}&pn=payee&am={}"
     upi = request.args.get("upi")
     if upi_payment_link:
         id = upi.split('-')
