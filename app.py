@@ -8,7 +8,7 @@ app = Flask(__name__)
 def redirect_to_upi_payment():
     flink = "upi://pay?pa={}&pn=payee&am={}"
     upi = request.args.get("upi")
-    if upi_payment_link:
+    if upi:
         id = upi.split('-')
         upi_payment_link = flink.format(id[0], id[1])
         return redirect(upi_payment_link, code=303)
